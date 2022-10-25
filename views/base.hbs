@@ -4,6 +4,9 @@
 <head>
   <title>{{data.title}} 📺【Almacen de Peliculas】➤ Los mejores Estrenos y Peliculas en HD</title>
   {{> head this }}
+
+  {{{block "pageHeader"}}}
+
   <style>
     {{{block "pageStyles"}}}
 
@@ -11,14 +14,10 @@
 </head>
 
 <body class="root">
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NH462XB"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
   <div class="row">
     <div class="fl w-100 pa0">
-      {{> header_desktop this }}
+      {{> header this }}
     </div>
   </div>
 
@@ -37,13 +36,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   {{> scripts}}
 
-  {{#if PROD_MODE}}
-  {{{block 'googleAnalyticsScripts'}}}
-  {{/if}}
-
 </body>
 {{> footer }}
 
-{{{block "scripts"}}}
+<script>
+  {{{block "scripts"}}}
+</script>
+
+
 
 </html>
