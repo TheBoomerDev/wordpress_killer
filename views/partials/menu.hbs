@@ -1,10 +1,27 @@
-<div id="categories" class="flex flex-wrap items-center center bounce-in-left">
-  <a href="/categorias" class="menu_item menu_title">LISTADO DE CATEGORIAS</a>
+<style>
+div#menu_categories{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
 
-  {{#data.categories}}
+a.menu_categories_title{
+  margin-bottom: 2rem;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
 
-  <a href="/categoria/{{slug}}" class="menu_item outline w-10 pa2 mr3 mb3 button" data-mdb-ripple-color="dark">
+
+</style>
+
+<div id="menu_categories">
+  <a href="/categorias" class="menu_categories_title">LISTADO DE CATEGORIAS</a>
+
+  {{#cats}}
+
+  <a href="/categoria/{{slug}}" class="">
     {{ title }}
   </a>
-  {{/data.categories}}
+  {{/cats}}
 </div>

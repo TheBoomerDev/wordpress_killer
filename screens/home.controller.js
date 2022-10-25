@@ -25,8 +25,16 @@ exports.getHome = async (req, res, next) => {
 
   let pages = await mPages.paginate(queryPage, options)
 
-  data['cats']  = cats.map(mCats.parseSimple)
-  data['pages'] = (pages.docs||[]).map(mPages.parseSimple)
+  data['cats']  = [{"title":"Titulo 01", slug:"Sluggg"}] //cats.map(mCats.parseSimple)
+
+  let mockPages = []
+  mockPages.push({
+    published_at:new Date(),
+    title:"Titulo Pagina 01",
+    slug:"titulo_pagina_01"
+  })
+
+  data['pages'] = mockPages//(pages.docs||[]).map(mPages.parseSimple)
 
   res.render('home', data);
 

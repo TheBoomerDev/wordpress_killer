@@ -6,9 +6,8 @@ exports.getList = async (req, res, next) => {
   let cats = await mCats.find()
   cats = cats.map(mCats.parseSimple)
 
-  const data = {
-    cats
-  }
+  let data = {}
+  data['cats'] = cats
   res.render('category_list', data);
 }
 

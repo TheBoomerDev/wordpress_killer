@@ -1,62 +1,27 @@
 {{!< base }}
 
-
-{{#contentFor 'pageHeader' }}
-<script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
-{{/contentFor}}
-
-
 {{#contentFor 'pageStyles' }}
 
-div.editorjs{
-  background-color:red;
-  width:50vw;
-  height:50vh;
+div.home_contenido{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
 {{/contentFor}}
 
 {{#contentFor 'content' }}
 
-<div id="editorjs" class="editorjs">
+  <div class="home_contenido">
 
-</div>
+    {{#pages}}
+      <a href="/{{slug}}" class="home_page">
+        {{ title }}
+      </a>
+    {{/pages}}
 
-<div class="categories">
-  {{#data.categories}}
-  <a href="/categoria/{{slug}}" class="">
-    {{ title }}
-  </a>
-  {{/data.categories}}
   </div>
-
-{{/contentFor}}
-
-
-{{#contentFor 'scripts' }}
-
-var editor = new EditorJS({
-    /**
-     * Create a holder for the Editor and pass its ID
-     */
-    holder : 'editorjs',
-
-    /**
-     * Available Tools list.
-     * Pass Tool's class or Settings object for each Tool you want to use
-     */
-    tools: {
-        header: {
-          class: Header,
-          inlineToolbar : true
-        },
-        // ...
-    },
-
-    /**
-     * Previously saved data that should be rendered
-     */
-    data: {}
-});
 
 {{/contentFor}}
