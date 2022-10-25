@@ -24,7 +24,7 @@ exports.parseItems =  (avoid = [], obj = {}) => {
 
     let data = {}
 
-    const keys = Object.keys(obj);
+    const keys = Object.keys(obj||{});
     keys.forEach(key => {
         if (exports.containsInArray(key, avoid)) return
         const value = obj[key]

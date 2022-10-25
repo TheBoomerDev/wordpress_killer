@@ -6,7 +6,7 @@ const home     = require('./home.controller')
 const category = require('./category.controller')
 const page     = require('./page.controller')
 
-router.get('/policy', legal.getLegal)
+router.get('/policies', legal.getLegal)
 router.get('/terms',  legal.getTerms)
 
 router.get('/categorias',      category.getList)

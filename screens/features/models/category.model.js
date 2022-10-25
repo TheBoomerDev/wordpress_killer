@@ -41,24 +41,24 @@ model.updateData = (newData, oldData) => {
 
 }
 
-model.createData = (obj) => {
+model.createData = (obj={}) => {
     let item = new model()
     return model.updateData(obj, item)
 }
 
-model.parse = (item) => {
+model.parse = (item={}) => {
     const avoid = ['__v']
     item = tools.parseItems(avoid, item)
     return item
 }
 
-model.parseSimple = (item) => {
+model.parseSimple = (item={}) => {
     const avoid = ['__v', 'pages', '_id']
     item = tools.parseItems(avoid, item)
     return item
 }
 
-model.parseListItem = (item) => {
+model.parseListItem = (item={}) => {
     const avoid = ['__v', 'body']
     obj = tools.parseItems(avoid, item)
     return obj

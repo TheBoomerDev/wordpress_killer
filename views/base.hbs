@@ -2,45 +2,108 @@
 <html lang="es">
 
 <head>
-  <title>{{data.title}} 📺【Almacen de Peliculas】➤ Los mejores Estrenos y Peliculas en HD</title>
-  {{> head this }}
+  <title>{{data.title}} 💀 🐲 HORNS Legend</title>
 
-  {{{block "pageHeader"}}}
+  <link rel="stylesheet" href="/css/style.css">
 
   <style>
-    {{{block "pageStyles"}}}
+    /* BASE DE CSS */
+    * {
+      font-family: 'Trebuchet MS', sans-serif;
+    }
 
+    a {
+      text-decoration: none;
+      font-weight: 700;
+      color: #607196;
+    }
+
+    body.root {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      background-color: #E8E9ED;
+      color: #212121;
+    }
+
+    div.root_content {
+      width: 100%;
+      margin-top: 4rem;
+      min-height: 80vh;
+    }
+
+    nav.menu {
+      padding-top: 1rem;
+    }
+
+    /* PRINCIPAL - FLEXBOX - B*/
+    body.root {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+    }
+
+    nav.menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    div.root_content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+    }
+
+    /* PRINCIPAL - FLEXBOX - E*/
+
+    {{{block "pageStyles"}}}
   </style>
+
 </head>
 
 <body class="root">
 
-  <div class="row">
-    <div class="fl w-100 pa0">
-      {{> header this }}
-    </div>
-  </div>
+  <nav class="menu">
 
-  <div class="row root_content">
-    <div class="fl w-100 w-10-ns pa2 menu_root">
-      {{> menu }}
+    <a href="/">💀 🐲 HORNS Legend</a>
 
+    <input type="text" placeholder="Search..">
+
+    <div class="menu_options">
+      <a href="/">Home</a>
+      <a href="/categorias">Categorias</a>
+      <a href="/policies">Policies</a>
+      <a href="/terms">Terms</a>
     </div>
-    <div class="fl w-100 w-80-ns pa2">
+
+
+  </nav>
+
+  <div class="root_content">
+
+    <div class="menu_left">
+      Menu Lateral IZQ
+    </div>
+    <div class="content">
       {{{block "content"}}}
     </div>
-    <div class="fl w-100 w-10-ns pa2">
-      {{> related this }}
+    <div class="menu_right">
+      Menu Lateral Drcha
     </div>
+
   </div>
 
-  {{> scripts}}
+  <footer>
+    Esto es el FOOTER
+  </footer>
+
 
 </body>
-{{> footer }}
 
 <script>
-  {{{block "scripts"}}}
 </script>
 
 
