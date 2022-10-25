@@ -1,0 +1,42 @@
+{{!< base }}
+{{#contentFor 'pageStyles' }}
+
+  html{
+    background-color: #424242;
+  }
+  div.categories{
+    margin-top:10rem;
+  }
+
+  span.label{
+    font-weight:lighter;
+  }
+
+{{/contentFor}}
+
+{{#contentFor 'content' }}
+
+  <article
+  class="cf pt3 mw9 center">
+    <header class="fl w-100 pt3-m pt4-l">
+      <h2 class="lh-title f3 b mt0">
+        Estas son las <span class="label">Ultimas Peliculas</span> que hemos añadido para que <span class="label"> Descargues </span>a la <span class="label"> Mejor Calidad</span> posible:
+      </h2>
+    </header>
+
+  <section class="fl w-100" vocab="https://schema.org/" typeof="ItemList">
+    {{#data.newest}} {{> movie this }} {{/data.newest}}
+  </section>
+  </article>
+
+
+  <div class="categories">
+    {{#data.categories}}
+    <a href="/categoria/{{slug}}" class="menu_header f6 link dim br1 ph3 pv2 mb2 dib white bg-blackbutton"
+      data-mdb-ripple-color="dark">
+      {{ title }}
+    </a>
+  {{/data.categories}}
+  </div>
+
+  {{/contentFor}}

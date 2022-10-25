@@ -1,0 +1,7 @@
+<div id="related_movies" class="flex flex-wrap items-center center">
+    {{#each related_movies}}
+    <a href="/movie/{{this.slug}}" class="outline w-10 pa2 mr3 mb3 button" data-mdb-ripple-color="dark">
+        {{this.name}}
+    </a>
+    {{/each}}
+</div>

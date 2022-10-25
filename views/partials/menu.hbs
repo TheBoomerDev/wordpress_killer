@@ -1,0 +1,10 @@
+<div id="categories" class="flex flex-wrap items-center center bounce-in-left">
+  <a href="/categorias" class="menu_item menu_title">LISTADO DE CATEGORIAS</a>
+
+  {{#data.categories}}
+
+  <a href="/categoria/{{slug}}" class="menu_item outline w-10 pa2 mr3 mb3 button" data-mdb-ripple-color="dark">
+    {{ title }}
+  </a>
+  {{/data.categories}}
+</div>

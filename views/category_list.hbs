@@ -1,0 +1,40 @@
+{{!< base }}
+{{#contentFor 'pageStyles' }}
+
+  html{
+    background-color: #424242;
+  }
+  div.categories{
+    margin-top:10rem;
+  }
+
+  span.label{
+    font-weight:lighter;
+  }
+
+  a.menu_item{
+    margin:1rem;
+  }
+
+{{/contentFor}}
+
+{{#contentFor 'content' }}
+
+  <article
+  class="cf pt3 mw9 center">
+    <header class="fl w-100 pt3-m pt4-l">
+      <h2 class="lh-title f3 b mt0">
+        Todas las categorias que tenemos para que <span class="label"> Veas </span> las <span class="label"> Mejores Peliculas</span>:
+      </h2>
+    </header>
+  </article>
+
+  <div class="categories flex flex-wrap">
+    {{#data.categories}}
+    <a href="/categoria/{{slug}}" class="outline menu_item button" data-mdb-ripple-color="dark">
+      {{ title }}
+    </a>
+  {{/data.categories}}
+  </div>
+
+  {{/contentFor}}

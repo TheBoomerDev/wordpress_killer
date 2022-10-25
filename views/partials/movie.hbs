@@ -1,0 +1,34 @@
+<a href="/pelicula/{{this.id}}" class="fl w-100 w-75-m w-25-l pa0" loading="lazy" itemprop="itemListElement" itemscope
+    itemtype="https://schema.org/Movie">
+
+    <div class="aspect-ratio aspect-ratio--3x4">
+        <figure loading="lazy">
+
+            <picture loading="lazy" class="" alt="{{title}}" itemprop="image">
+
+                <source srcset="https://image.tmdb.org/t/p/w185/{{poster_path}} 200w" sizes="(max-width: 639px) 100vw">
+                <source srcset="https://image.tmdb.org/t/p/w342/{{poster_path}} 650w"
+                    sizes="(min-width: 640px) and (max-width: 1023px) 50vw">
+                <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" loading="lazy" alt="{{title}}" width="100%" height="100%"
+                    itemprop="image" class="movie_poster slide-in-fwd-center">
+
+            </picture>
+
+            <span class="title">
+                {{title}}
+            </span>
+
+
+            <figcaption class="center">
+                <span
+                    class="center button f6 grow no-underline br-pill ph3 pv2 pa1-m pa1-l mb2 dib white bg-dark-green">
+                    Descargar
+                </span>
+                <span class="center button f6 grow no-underline br-pill ph3 pv2 pa1-m pa1-l mb2 dib white bg-dark-blue">
+                    Ver Online
+                </span>
+            </figcaption>
+        </figure>
+
+    </div>
+</a>

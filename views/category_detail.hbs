@@ -1,0 +1,46 @@
+{{!< base}} {{#contentFor 'pageStyles' }}
+  html{
+    background-color: #424242;
+  }
+  div.container {
+    margin-top:0rem;
+  };
+  {{/contentFor}} {{#contentFor 'content' }} {{ pageData }} <section class="fl w-100" aria-label="Paginación">
+
+  <article class="pa2 center">
+    <header class="tc-l ph2 ph4-ns pt4 pt5-ns center">
+      <h2 class="f1 f1-m lh-title fw2 mt0 center">
+        {{data.webDescription}}:
+      </h2>
+    </header>
+
+    <section class="fl w-100" aria-label="Paginación">
+      {{#if data.prevPage}}
+        <a class="f6 fl br-pill hover-bg-purple hover-white b--purple link ba ph3 pv2 dib purple"
+          href="{{ data.currentPage }}?page={{ data.prevPage }}">Anterior Pagina</a>
+      {{/if}}
+      {{#if data.nextPage}}
+        <a class="f6 fl br-pill hover-bg-purple hover-white b--purple link ba ph3 pv2 dib purple"
+        href="{{ data.currentPage }}?page={{ data.nextPage }}">Siguiente Pagina</a>
+      {{/if}}
+    </section>
+
+    <section class="fl w-100" vocab="https://schema.org/" typeof="ItemList">
+
+      {{#each data.movies}}
+      {{> movie this }}
+      {{/each}}
+    </section>
+    <section class="fl w-100" aria-label="Paginación">
+      {{#if data.prevPage}}
+        <a class="f6 fl br-pill hover-bg-purple hover-white b--purple link ba ph3 pv2 dib purple"
+          href="{{ data.currentPage }}?page={{ data.prevPage }}">Anterior Pagina</a>
+      {{/if}}
+      {{#if data.nextPage}}
+        <a class="f6 fl br-pill hover-bg-purple hover-white b--purple link ba ph3 pv2 dib purple"
+        href="{{ data.currentPage }}?page={{ data.nextPage }}">Siguiente Pagina</a>
+      {{/if}}
+    </section>
+  </article>
+
+  {{/contentFor}}
